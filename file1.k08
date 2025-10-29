@@ -1,0 +1,18 @@
+program VariantEight {
+  INT Aaa, Bbb, Xxx, Yyy;
+
+  read(Aaa);
+  read(Bbb);
+  
+  write(Aaa Add Bbb);
+  write(Aaa Sub Bbb);
+  write(Aaa Mul Bbb);
+  write(Aaa Div Bbb);
+  write(Aaa Mod Bbb);
+
+  Xxx := (Aaa Sub Bbb) Mul 10 Add (Aaa Add Bbb) Div 10;
+  Yyy := Xxx Add Xxx Mod 10;
+
+  write(Xxx);
+  write(Yyy);
+}
