@@ -1,0 +1,18 @@
+program ForLoopExample {
+  INT Aaa, Bbb, Cya, Cyb, Xva;
+
+  read(Aaa);
+  read(Bbb);
+
+  for Cya := Aaa to Bbb do {
+    write(Cya Mul Cya);
+  }
+
+  Xva := 0;
+  for Cya := 1 to Aaa do {
+    for Cyb := 1 to Bbb do {
+      Xva := Xva Add 1;
+    }
+  }
+  write(Xva);
+}
