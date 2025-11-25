@@ -1,18 +1,21 @@
-program ForLoopExample {
-  INT Aaa, Bbb, Cya, Cyb, Xva;
+PROGRAM Loop
+VAR INT32 Aaa, Bbb, Cyc, Cyb, Val, Idx;
+START
+  READ(Aaa);
+  READ(Bbb);
 
-  read(Aaa);
-  read(Bbb);
-
-  for Cya := Aaa to Bbb do {
-    write(Cya Mul Cya);
+  FOR Idx = Bbb DOWNTO Aaa DO {
+     (Aaa ADD Bbb) SUB Idx -> Cyc;
+     WRITE(Cyc MUL Cyc);
   }
 
-  Xva := 0;
-  for Cya := 1 to Aaa do {
-    for Cyb := 1 to Bbb do {
-      Xva := Xva Add 1;
+  0 -> Val;
+  
+  FOR Cyc = Aaa DOWNTO 1 DO {
+    FOR Cyb = Bbb DOWNTO 1 DO {
+       Val ADD 1 -> Val;
     }
   }
-  write(Xva);
-}
+  
+  WRITE(Val);
+FINISH
