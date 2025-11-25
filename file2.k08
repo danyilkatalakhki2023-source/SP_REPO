@@ -1,34 +1,36 @@
-program LogicalOperations {
-  INT Aaa, Bbb, Ccc, Max;
+PROGRAM Prg
+VAR INT32 Aaa, Bbb, Ccc, Max;
+START
+  READ(Aaa);
+  READ(Bbb);
+  READ(Ccc);
 
-  read(Aaa);
-  read(Bbb);
-  read(Ccc);
-
-  if Aaa Ge Bbb and Aaa Ge Ccc {
-    Max := Aaa;
-  } else if Bbb Ge Aaa and Bbb Ge Ccc {
-    Max := Bbb;
-  } else {
-    Max := Ccc;
+  IF ((Aaa GT Bbb) OR (Aaa EQ Bbb)) AND ((Aaa GT Ccc) OR (Aaa EQ Ccc)) {
+    Aaa -> Max;
+  } ELSE {
+    IF ((Bbb GT Aaa) OR (Bbb EQ Aaa)) AND ((Bbb GT Ccc) OR (Bbb EQ Ccc)) {
+      Bbb -> Max;
+    } ELSE {
+      Ccc -> Max;
+    }
   }
-  write(Max);
+  WRITE(Max);
 
-  if (Aaa Eq Bbb) and (Aaa Eq Ccc) and (Bbb Eq Ccc) {
-    write(1);
-  } else {
-    write(0);
-  }
-  
-  if not (Aaa Ge 0) or not (Bbb Ge 0) or not (Ccc Ge 0) {
-    write(-1);
-  } else {
-    write(0);
+  IF (Aaa EQ Bbb) AND (Aaa EQ Ccc) AND (Bbb EQ Ccc) {
+    WRITE(1);
+  } ELSE {
+    WRITE(0);
   }
 
-  if Aaa Ge (Bbb Add Ccc) {
-    write(10);
-  } else {
-    write(0);
+  IF (NOT ((Aaa GT 0) OR (Aaa EQ 0))) OR (NOT ((Bbb GT 0) OR (Bbb EQ 0))) OR (NOT ((Ccc GT 0) OR (Ccc EQ 0))) {
+    WRITE(-1);
+  } ELSE {
+    WRITE(0);
   }
-}
+
+  IF (Aaa GT (Bbb ADD Ccc)) OR (Aaa EQ (Bbb ADD Ccc)) {
+    WRITE(10);
+  } ELSE {
+    WRITE(0);
+  }
+FINISH
