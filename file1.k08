@@ -1,18 +1,19 @@
-program VariantEight {
-  INT Aaa, Bbb, Xxx, Yyy;
+PROGRAM Pro
+VAR INT32 Aaa, Bbb, Xxx, Yyy;
+START
+  READ(Aaa);
+  READ(Bbb);
 
-  read(Aaa);
-  read(Bbb);
+  WRITE(Aaa ADD Bbb);
+  WRITE(Aaa SUB Bbb);
+  WRITE(Aaa MUL Bbb);
+  WRITE(Aaa DIV Bbb);
+  WRITE(Aaa MOD Bbb);
+
+  ((Aaa SUB Bbb) MUL 10) ADD ((Aaa ADD Bbb) DIV 10) -> Xxx;
   
-  write(Aaa Add Bbb);
-  write(Aaa Sub Bbb);
-  write(Aaa Mul Bbb);
-  write(Aaa Div Bbb);
-  write(Aaa Mod Bbb);
+  Xxx ADD (Xxx MOD 10) -> Yyy;
 
-  Xxx := (Aaa Sub Bbb) Mul 10 Add (Aaa Add Bbb) Div 10;
-  Yyy := Xxx Add Xxx Mod 10;
-
-  write(Xxx);
-  write(Yyy);
-}
+  WRITE(Xxx);
+  WRITE(Yyy);
+FINISH
