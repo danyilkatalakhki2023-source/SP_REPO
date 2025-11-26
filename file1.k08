@@ -1,19 +1,19 @@
 PROGRAM Pro
-VAR INT32 Aaa, Bbb, Xxx, Yyy;
+VAR INT32_t _Aaa, _Bbb, _Xxx, _Yyy;
 START
-  READ(Aaa);
-  READ(Bbb);
+  READ(_Aaa);
+  READ(_Bbb);
 
-  WRITE(Aaa ADD Bbb);
-  WRITE(Aaa SUB Bbb);
-  WRITE(Aaa MUL Bbb);
-  WRITE(Aaa DIV Bbb);
-  WRITE(Aaa MOD Bbb);
+  WRITE(_Aaa ADD _Bbb);
+  WRITE(_Aaa SUB _Bbb);
+  WRITE(_Aaa MUL _Bbb);
+  WRITE(_Aaa DIV _Bbb);
+  WRITE(_Aaa MOD _Bbb);
 
-  ((Aaa SUB Bbb) MUL 10) ADD ((Aaa ADD Bbb) DIV 10) -> Xxx;
+  ((_Aaa SUB _Bbb) MUL 10) ADD ((_Aaa ADD _Bbb) DIV 10) -> _Xxx;
   
-  Xxx ADD (Xxx MOD 10) -> Yyy;
+  _Xxx ADD (_Xxx MOD 10) -> _Yyy;
 
-  WRITE(Xxx);
-  WRITE(Yyy);
+  WRITE(_Xxx);
+  WRITE(_Yyy);
 FINISH
