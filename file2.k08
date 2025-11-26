@@ -1,34 +1,34 @@
 PROGRAM Prg
-VAR INT32 Aaa, Bbb, Ccc, Max;
+VAR INT32_t _Aaa, _Bbb, _Ccc, _Max;
 START
-  READ(Aaa);
-  READ(Bbb);
-  READ(Ccc);
+  READ(_Aaa);
+  READ(_Bbb);
+  READ(_Ccc);
 
-  IF ((Aaa GT Bbb) OR (Aaa EQ Bbb)) AND ((Aaa GT Ccc) OR (Aaa EQ Ccc)) {
-    Aaa -> Max;
+  IF ((_Aaa GT _Bbb) OR (_Aaa EQ _Bbb)) AND ((_Aaa GT _Ccc) OR (_Aaa EQ _Ccc)) {
+    _Aaa -> _Max;
   } ELSE {
-    IF ((Bbb GT Aaa) OR (Bbb EQ Aaa)) AND ((Bbb GT Ccc) OR (Bbb EQ Ccc)) {
-      Bbb -> Max;
+    IF ((_Bbb GT _Aaa) OR (_Bbb EQ _Aaa)) AND ((_Bbb GT _Ccc) OR (_Bbb EQ _Ccc)) {
+      _Bbb -> _Max;
     } ELSE {
-      Ccc -> Max;
+      _Ccc -> _Max;
     }
   }
-  WRITE(Max);
+  WRITE(_Max);
 
-  IF (Aaa EQ Bbb) AND (Aaa EQ Ccc) AND (Bbb EQ Ccc) {
+  IF (_Aaa EQ _Bbb) AND (_Aaa EQ _Ccc) AND (_Bbb EQ _Ccc) {
     WRITE(1);
   } ELSE {
     WRITE(0);
   }
 
-  IF (NOT ((Aaa GT 0) OR (Aaa EQ 0))) OR (NOT ((Bbb GT 0) OR (Bbb EQ 0))) OR (NOT ((Ccc GT 0) OR (Ccc EQ 0))) {
+  IF (NOT ((_Aaa GT 0) OR (_Aaa EQ 0))) OR (NOT ((_Bbb GT 0) OR (_Bbb EQ 0))) OR (NOT ((_Ccc GT 0) OR (_Ccc EQ 0))) {
     WRITE(-1);
   } ELSE {
     WRITE(0);
   }
 
-  IF (Aaa GT (Bbb ADD Ccc)) OR (Aaa EQ (Bbb ADD Ccc)) {
+  IF (_Aaa GT (_Bbb ADD _Ccc)) OR (_Aaa EQ (_Bbb ADD _Ccc)) {
     WRITE(10);
   } ELSE {
     WRITE(0);
