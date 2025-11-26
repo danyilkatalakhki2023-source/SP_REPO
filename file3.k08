@@ -1,21 +1,21 @@
 PROGRAM Loop
-VAR INT32 Aaa, Bbb, Cyc, Cyb, Val, Idx;
+VAR INT32_t _Aaa, _Bbb, _Cyc, _Cyb, _Val, _Idx;
 START
-  READ(Aaa);
-  READ(Bbb);
+  READ(_Aaa);
+  READ(_Bbb);
 
-  FOR Idx = Bbb DOWNTO Aaa DO {
-     (Aaa ADD Bbb) SUB Idx -> Cyc;
-     WRITE(Cyc MUL Cyc);
+  FOR _Idx = _Bbb DOWNTO _Aaa DO {
+     (_Aaa ADD _Bbb) SUB _Idx -> _Cyc;
+     WRITE(_Cyc MUL _Cyc);
   }
 
-  0 -> Val;
+  0 -> _Val;
   
-  FOR Cyc = Aaa DOWNTO 1 DO {
-    FOR Cyb = Bbb DOWNTO 1 DO {
-       Val ADD 1 -> Val;
+  FOR _Cyc = _Aaa DOWNTO 1 DO {
+    FOR _Cyb = _Bbb DOWNTO 1 DO {
+       _Val ADD 1 -> _Val;
     }
   }
   
-  WRITE(Val);
+  WRITE(_Val);
 FINISH
